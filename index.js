@@ -50,6 +50,4 @@ canvas.addEventListener('mouseup', (e) => {
 
 canvas.addEventListener('mousemove', draw);  
 
-canvas.addEventListener('touchstart', (e) => { e.preventDefault(); isDrawing = true; ctx.beginPath(); }, { passive: false });
-canvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e); }, { passive: false });
-canvas.addEventListener('touchend', () => { isDrawing = false; ctx.beginPath(); });
+
