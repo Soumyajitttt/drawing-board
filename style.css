@@ -1,0 +1,105 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Prevents the page from scrolling */
+}
+
+/* Full Screen Container */
+.container {
+    display: flex;
+    flex-direction: row; /* Places the toolbar on the side of the canvas */
+    width: 100%;
+    height: 100vh;
+}
+
+/* Sidebar Toolbar */
+#toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    background-color: #1e1e24; /* Dark charcoal */
+    width: 90px;
+    padding: 40px 10px;
+    box-shadow: 3px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Optional tweak for dark mode: adjust the color picker border */
+#colorPicker::-webkit-color-swatch {
+    border: 3px solid #ffffff;
+    border-radius: 100%; /* Neon accent ring */
+}
+
+/* Customizing the Color Picker */
+#colorPicker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+}
+
+#colorPicker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+/* Size Slider */
+#sizePicker {
+    width: 70px; /* Constrained to fit cleanly inside the sidebar width */
+    accent-color: #4f46e5;
+    cursor: pointer;
+}
+
+/* Clear Button Styling */
+#clearButton {
+    background-color: #ef4444;
+    color: #ffffff;
+    border: none;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%; /* Spans the available width inside the sidebar padding */
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#clearButton:hover {
+    background-color: #dc2626;
+}
+
+#clearButton:active {
+    transform: scale(0.95);
+}
+
+/* Full Screen Drawing Board Workspace */
+.drawingBoard {
+    flex-grow: 1; /* Instructs the canvas container to claim all remaining screen width */
+    height: 100%;
+    background-color: #ffffff;
+    background-image: radial-gradient(#d0d0d0 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+#drawingBoard {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
